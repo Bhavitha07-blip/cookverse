@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes - CookVerse</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fixed Font Awesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+</head>
+<body>
+
+<header>
+    <h1>CookVerse</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main class="main-content" style="display: block;">
+    <div class="search-box">
+        <input type="text" id="recipeSearch" onkeyup="searchRecipe()" placeholder="Search 15+ South Indian favorites...">
+    </div>
+
+    <!-- The 15 Recipe Grid -->
+    <div class="recipe-grid">
+        <!-- Breakfast Section -->
+        <div class="recipe-card" onclick="openPopup('idli')">
+            <div class="card-img" style="background-image: url('soft idli.jpg');"></div>
+            <h3><i class="fas fa-bowl-food"></i> Soft Idli</h3>
+            <p><i class="fas fa-eye"></i> Click for Process</p>
+        </div>
+        <div class="recipe-card" onclick="openPopup('masala-dosa')">
+            <div class="card-img" style="background-image: url('masala.dosa.jpg');"></div>
+            <h3><i class="fas fa-fire-burner"></i> Masala Dosa</h3>
+            <p><i class="fas fa-eye"></i> Click for Process</p>
+        </div>
+        <div class="recipe-card" onclick="openPopup('vada')">
+            <div class="card-img" style="background-image: url('medu vada.jpg');"></div>
+            <h3><i class="fas fa-circle-dot"></i> Medu Vada</h3>
+            <p><i class="fas fa-eye"></i> Click for Process</p>
+        </div>
+        <div class="recipe-card" onclick="openPopup('upma')">
+            <div class="card-img" style="background-image: url('rava upma.jpg');"></div>
+            <h3><i class="fas fa-wheat-awn"></i> Rava Upma</h3>
+            <p><i class="fas fa-eye"></i> Click for Process</p>
+        </div>
+        <div class="recipe-card" onclick="openPopup('pongal')">
+            <div class="card-img" style="background-image: url('ven pongal.jpg');"></div>
+            <h3><i class="fas fa-mortar-pestle"></i> Ven Pongal</h3>
+            <p><i class="fas fa-eye"></i> Click for Process</p>
+        </div>
+
+        <!-- Main Course Section -->
+        <div class="recipe-card" onclick="openPopup('sambar')">
+            <div class="card-img" style="background-image: url('hotel sambar.jpg');"></div>
+            <h3><i class="fas fa-soup"></i> Hotel Sambar</h3>
+            <p><i class="fas fa-eye"></i> Click for Process</p>
+        </div>
+        <div class="recipe-card" onclick="openPopup('rasam')">
+            <div class="card-img" style="background-image: url('tomato rasam.jpg');"></div>
+            <h3><i class="fas fa-mug-hot"></i> Tomato Rasam</h3>
+            <p><i class="fas fa-eye"></i> Click for Process</p>
+        </div>
+        <div class="recipe-card" onclick="openPopup('lemon-rice')">
+            <div class="card-img" style="background-image: url('lemon rice.jpg');"></div>
+            <h3><i class="fas fa-lemon"></i> Lemon Rice</h3>
+            <p><i class="fas fa-eye"></i> Click for Process</p>
+        </div>
+        <div class="recipe-card" onclick="openPopup('curd-rice')">
+            <div class="card-img" style="background-image: url('curd rice.jpg');"></div>
+            <h3><i class="fas fa-bowl-rice"></i> Curd Rice</h3>
+            <p><i class="fas fa-eye"></i> Click for Process</p>
+        </div>
+        <div class="recipe-card" onclick="openPopup('bisibelebath')">
+            <div class="card-img" style="background-image: url('bis bele bath.jpg');"></div>
+            <h3><i class="fas fa-pepper-hot"></i> Bisi Bele Bath</h3>
+            <p><i class="fas fa-eye"></i> Click for Process</p>
+        </div>
+
+        <!-- Sweets & Snacks Section -->
+        <div class="recipe-card" onclick="openPopup('payasam')">
+            <div class="card-img" style="background-image: url('semiya payasam.jpg');"></div>
+            <h3><i class="fas fa-ice-cream"></i> Semiya Payasam</h3>
+            <p><i class="fas fa-eye"></i> Click for Process</p>
+        </div>
+        <div class="recipe-card" onclick="openPopup('unniyappam')">
+            <div class="card-img" style="background-image: url('unnipayam.jpg');"></div>
+            <h3><i class="fas fa-cookie"></i> Unniyappam</h3>
+            <p><i class="fas fa-eye"></i> Click for Process</p>
+        </div>
+        <div class="recipe-card" onclick="openPopup('kesari')">
+            <div class="card-img" style="background-image: url('rava kesari.jpg');"></div>
+            <h3><i class="fas fa-cake-candles"></i> Rava Kesari</h3>
+            <p><i class="fas fa-eye"></i> Click for Process</p>
+        </div>
+        <div class="recipe-card" onclick="openPopup('pesarattu')">
+            <div class="card-img" style="background-image: url('pesarattu.jpg');"></div>
+            <h3><i class="fas fa-seedling"></i> Pesarattu</h3>
+            <p><i class="fas fa-eye"></i> Click for Process</p>
+        </div>
+        <div class="recipe-card" onclick="openPopup('uttapam')">
+            <div class="card-img" style="background-image: url('onion utappam.jpg');"></div>
+            <h3><i class="fas fa-pizza-slice"></i> Onion Uttapam</h3>
+            <p><i class="fas fa-eye"></i> Click for Process</p>
+        </div>
+        <div class="recipe-card" onclick="openPopup('mangalore-buns')">
+    <div class="card-img" style="background-image: url('mangalore buns.jpg');"></div>
+    <h3><i class="fas fa-cookie-bite"></i> Mangalore Buns</h3>
+    <p><i class="fas fa-eye"></i> Click for Process</p>
+</div>
+
+    </div>
+
+    <!-- The Popup Modal Structure -->
+    <div id="recipeModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <div id="popupBody"></div>
+        </div>
+    </div>
+
+    <!-- Detailed Recipe Data (Hidden) -->
+    <div id="recipeData" style="display:none;">
+        <div id="idli">
+            <h2><i class="fas fa-bowl-food"></i> Soft Idli</h2>
+            <p><b>Ingredients:</b> Parboiled Rice, Urad Dal, Fenugreek seeds, Salt.</p>
+            <p><b>Process:</b> <br>1. Soak rice and dal separately for 6 hours.<br>2. Grind into a smooth batter and ferment overnight.<br>3. Grease plates, pour batter, and steam for 10-12 minutes.</p>
+        </div>
+        <div id="masala-dosa">
+            <h2><i class="fas fa-fire-burner"></i> Masala Dosa</h2>
+            <p><b>Ingredients:</b> Dosa batter, Boiled Potatoes, Onion, Turmeric, Ghee.</p>
+            <p><b>Process:</b> <br>1. Sauté onions and mashed potatoes with turmeric for filling.<br>2. Spread batter thin on a hot tawa.<br>3. Cook until crisp, add filling, and fold.</p>
+        </div>
+        <div id="vada">
+            <h2><i class="fas fa-circle-dot"></i> Medu Vada</h2>
+            <p><b>Ingredients:</b> Urad Dal, Peppercorns, Ginger, Curry leaves.</p>
+            <p><b>Process:</b> <br>1. Grind soaked dal into a thick, fluffy paste.<br>2. Mix in spices.<br>3. Shape into doughnuts and deep fry until golden brown.</p>
+        </div>
+        <div id="upma">
+            <h2><i class="fas fa-wheat-awn"></i> Rava Upma</h2>
+            <p><b>Ingredients:</b> Semolina (Rava), Water, Onion, Mustard seeds, Ginger.</p>
+            <p><b>Process:</b> <br>1. Roast rava until fragrant.<br>2. Sauté spices and onions.<br>3. Add water and salt; bring to a boil.<br>4. Stir in rava and cook until thickened.</p>
+        </div>
+        <div id="pongal">
+            <h2><i class="fas fa-mortar-pestle"></i> Ven Pongal</h2>
+            <p><b>Ingredients:</b> Rice, Moong Dal, Ghee, Black pepper, Cumin, Cashews.</p>
+            <p><b>Process:</b> <br>1. Pressure cook rice and dal together until very soft.<br>2. Temper cumin, pepper, and cashews in ghee.<br>3. Mix tempering into the mashed rice-dal mix.</p>
+        </div>
+        <div id="sambar">
+            <h2><i class="fas fa-soup"></i> Hotel Sambar</h2>
+            <p><b>Ingredients:</b> Toor Dal, Mixed Veggies, Tamarind, Sambar powder.</p>
+            <p><b>Process:</b> <br>1. Cook dal until soft.<br>2. Boil veggies in tamarind water with spice powder.<br>3. Add cooked dal, simmer, and temper with mustard.</p>
+        </div>
+        <div id="rasam">
+            <h2><i class="fas fa-mug-hot"></i> Tomato Rasam</h2>
+            <p><b>Ingredients:</b> Tomatoes, Tamarind water, Rasam powder, Garlic, Ghee.</p>
+            <p><b>Process:</b> <br>1. Mash tomatoes into tamarind water.<br>2. Add rasam powder and simmer until frothy.<br>3. Temper with garlic and mustard in ghee.</p>
+        </div>
+        <div id="lemon-rice">
+            <h2><i class="fas fa-lemon"></i> Lemon Rice</h2>
+            <p><b>Ingredients:</b> Cooked Rice, Lemon juice, Peanuts, Turmeric, Green chilies.</p>
+            <p><b>Process:</b> <br>1. Prepare a tempering of mustard, peanuts, and turmeric.<br>2. Turn off heat and add lemon juice.<br>3. Mix gently into cooled, cooked rice.</p>
+        </div>
+        <div id="curd-rice">
+            <h2><i class="fas fa-bowl-rice"></i> Curd Rice</h2>
+            <p><b>Ingredients:</b> Overcooked Rice, Fresh Curd, Milk, Ginger, Curry leaves.</p>
+            <p><b>Process:</b> <br>1. Mash rice and mix with milk and salt.<br>2. Once cool, mix in curd.<br>3. Temper with mustard and ginger; garnish as desired.</p>
+        </div>
+        <div id="bisibelebath">
+            <h2><i class="fas fa-pepper-hot"></i> Bisi Bele Bath</h2>
+            <p><b>Ingredients:</b> Rice, Toor Dal, Veggies, Tamarind, Bisi Bele Bath powder.</p>
+            <p><b>Process:</b> <br>1. Cook rice, dal, and veggies together.<br>2. Add spice powder and tamarind extract.<br>3. Simmer until thick; finish with ghee and cashews.</p>
+        </div>
+        <div id="payasam">
+            <h2><i class="fas fa-ice-cream"></i> Semiya Payasam</h2>
+            <p><b>Ingredients:</b> Vermicelli, Milk, Sugar, Cardamom, Ghee-fried nuts.</p>
+            <p><b>Process:</b> <br>1. Roast semiya in ghee until golden.<br>2. Cook roasted semiya in boiling milk until soft.<br>3. Add sugar and cardamom; simmer for 5 minutes.</p>
+        </div>
+        <div id="unniyappam">
+            <h2><i class="fas fa-cookie"></i> Unniyappam</h2>
+            <p><b>Ingredients:</b> Rice flour, Jaggery syrup, Ripe Bananas, Coconut bits.</p>
+            <p><b>Process:</b> <br>1. Mix mashed bananas, rice flour, and jaggery into a thick batter.<br>2. Add coconut bits.<br>3. Fry in an 'Appe' pan with ghee until dark brown.</p>
+        </div>
+        <div id="kesari">
+            <h2><i class="fas fa-cake-candles"></i> Rava Kesari</h2>
+            <p><b>Ingredients:</b> Rava, Sugar, Ghee, Cashews, Saffron/Food color.</p>
+            <p><b>Process:</b> <br>1. Roast rava in ghee.<br>2. Cook rava in boiling water until soft.<br>3. Stir in sugar and color; cook until it leaves the pan sides.</p>
+        </div>
+        <div id="pesarattu">
+            <h2><i class="fas fa-seedling"></i> Pesarattu</h2>
+            <p><b>Ingredients:</b> Whole Green Gram, Ginger, Green chilies, Salt.</p>
+            <p><b>Process:</b> <br>1. Soak moong dal for 5 hours.<br>2. Grind into a smooth batter with ginger/chilies.<br>3. Spread thin on tawa and cook until crispy golden.</p>
+        </div>
+        <div id="uttapam">
+            <h2><i class="fas fa-pizza-slice"></i> Onion Uttapam</h2>
+            <p><b>Ingredients:</b> Dosa batter, Finely chopped Onions, Green chilies, Oil.</p>
+            <p><b>Process:</b> <br>1. Pour thick batter on tawa (don't spread).<br>2. Top with onions and chilies.<br>3. Flip and cook on both sides until onions caramelize.</p>
+        </div>
+        <div id="mangalore-buns">
+    <h2><i class="fas fa-cookie-bite"></i> Mangalore Buns</h2>
+    <p><b>Ingredients:</b> 2 Ripe Bananas, 2 cups Maida, 1/2 cup Curd, Sugar, Cumin, Oil.</p>
+    <p><b>Process:</b> <br>1. Mash bananas with sugar and cumin.<br>2. Mix with flour and curd to form a soft dough; ferment for 8 hours.<br>3. Roll into thick puris and deep fry until they puff up and turn golden brown.</p>
+</div>
+    </div>
+</main>
+
+<footer>&copy; 2026 CookVerse | Hyderabad, India</footer>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+ 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - CookVerse</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+</head>
+<body>
+
+<header>
+    <h1>CookVerse</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main class="main-content">
+    <div class="glass-card contact-form-card">
+        <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+        
+        <!-- Hidden Success Message -->
+        <div id="successMessage" style="display:none; background: rgba(76, 175, 80, 0.3); border: 1px solid #4CAF50; padding: 20px; border-radius: 15px; margin-bottom: 20px; color: #fff; text-align: center;">
+            <i class="fas fa-check-circle" style="font-size: 2rem; color: #4CAF50; margin-bottom: 10px;"></i><br>
+            <strong>Thank you!</strong> Your message has been sent to the CookVerse team. We will get back to you soon.
+        </div>
+
+        <!-- Contact Form -->
+        <form id="contactForm" onsubmit="return submitForm()">
+            <p>We'd love to hear from you! Send us a message below.</p>
+            
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Your Name" pattern="[A-Za-z ]+" title="Please enter letters only" required>
+            </div>
+
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Your Email Address" required>
+            </div>
+
+            <div class="form-group">
+                <textarea id="message" placeholder="Write your message here..." rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="cta-button">
+                Send Message <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+</main>
+
+<!-- Hidden Audio for Success Feedback -->
+<audio id="popupSound" src="https://www.soundjay.com" preload="auto"></audio>
+
+<script src="script.js"></script>
+
+<footer>
+    <div class="footer-bottom">&copy; 2026 CookVerse | Hyderabad, India</div>
+</footer>
+
+</body>
+</html>
