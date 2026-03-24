@@ -1,0 +1,218 @@
+:root {
+    --primary: #2c3e50;       /* Professional Dark Slate */
+    --primary-dark: #1a252f;
+    --accent: #f1c40f;        /* Bright Yellow for Titles */
+    --white: #ffffff;
+    --overlay: rgba(0, 0, 0, 0.7); /* Dark Glass Tint for readability */
+}
+
+
+/* --- Global Reset --- */
+* { 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Adding a background color/image so glass effect works */
+    background: #f4f4f4; 
+}
+
+/* --- Header & Navigation --- */
+header {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+nav { margin-top: 10px; }
+nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; text-transform: uppercase; }
+nav a:hover { color: var(--accent); }
+
+/* --- Home Page (NEW CENTERING LOGIC) --- */
+.home-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertical Center */
+    align-items: center;     /* Horizontal Center */
+    text-align: center;      /* Text Center */
+    padding: 60px 20px;
+}
+
+.home-hero-content {
+    max-width: 800px;
+    width: 100%;
+}
+
+.welcome-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    color: #555;
+}
+
+/* Small Button Fix */
+.small-btn {
+    width: auto !important;   /* Prevents stretching */
+    display: inline-block;    /* Shrinks to text size */
+    padding: 14px 40px !important;
+    font-size: 1.1rem;
+}
+
+/* --- Main Content & Glass Cards (Used by About/Contact) --- */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+.glass-card, .about-card, .contact-form-card {
+    /* Use a light, semi-transparent white instead of dark grey */
+    background: rgba(255, 255, 255, 0.15); 
+    
+    /* This adds the "frosted glass" effect */
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    
+    /* A thin white border makes it look like real glass */
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    
+    padding: 50px 40px;
+    border-radius: 25px;
+    text-align: center;
+    max-width: 850px;
+    width: 90%;
+    
+    /* Soft shadow instead of a heavy black one */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); 
+}
+
+/* Make sure the text is dark so it's readable on the light glass */
+.about-card p, .about-card h2 {
+    color: #222 !important; 
+    text-shadow: none; /* Remove shadows for a cleaner look */
+}
+
+/* Keep the title yellow but maybe a slightly deeper shade for contrast */
+.about-card h1 {
+    color: #d4ac0d !important; 
+    font-weight: 800;
+}
+
+.about-card h2 { color: var(--primary); font-size: 1.8rem; margin-top: 30px; margin-bottom: 15px; }
+.about-card p { line-height: 1.8; font-size: 1.15rem; margin-bottom: 20px; color: #f1f1f1; }
+.about-footer-info { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); }
+.about-footer-info p { font-size: 1rem; margin: 8px 0; color: var(--accent); }
+
+/* --- Recipe Grid (Untouched) --- */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+.recipe-card {
+    background: var(--white);
+    color: #333;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+.recipe-card:hover { transform: scale(1.05); }
+.card-img { height: 200px; background-size: cover; background-position: center; border-bottom: 4px solid var(--primary); }
+
+/* --- Popup Modal (Untouched) --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 550px;
+    position: relative;
+    color: #333;
+}
+.close-btn { position: absolute; top: 10px; right: 20px; font-size: 35px; cursor: pointer; color: var(--primary-dark); }
+
+/* --- Contact Form (Untouched) --- */
+.form-group { margin-bottom: 20px; width: 100%; }
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* --- Global Button Style --- */
+.cta-button {
+    background: var(--primary);
+    color: white;
+    padding: 12px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    width: 100%; /* Default for forms, overridden by .small-btn on Home */
+}
+.cta-button:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+/* --- Search Box --- */
+.search-box input {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 2px solid var(--primary);
+    display: block;
+    margin: 0 auto 30px;
+}
+
+/* --- Footer --- */
+footer {
+    background: #222;
+    color: #bbb;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+/* --- Effects --- */
+.blink { animation: blinker 1.5s linear infinite; }
+@keyframes blinker { 50% { opacity: 0; } }
+body {
+    background: url('cooking.jpg'); /* No more transparency/tint */
+    background-size: cover;         /* Makes it fill the whole screen */
+    background-position: center;    /* Centers the image */
+    background-attachment: fixed;   /* Keeps it from moving when you scroll */
+}
+
